@@ -1,0 +1,3 @@
+3 - merge sort
+2 - bubble sort
+1 - selection sort

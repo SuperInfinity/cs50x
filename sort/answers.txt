@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: it takes the longest time to sort random 50,000 list, But it is faster than others in sorted lists.
+
+sort2 uses: Merge sort
+
+How do you know?: while in any case it takes very less time.
+
+sort3 uses: Selection sort
+
+How do you know?: in sorted50,000 list it is slower than others but faster than bubble in random50,000.
