@@ -1,0 +1,10 @@
+By looking at the average energy, valence, and danceability of a person’s top 100 songs from the past year.
+we'll then get a score from 1 - 0 and then we could characterize a person's aura
+
+but then again.. some scores might be same but have different auras... so this isn't very effective..
+so say energy-- how much the song ccan make u grove and move.., valence the positiveness of the track.., dancability..,
+
+we could average these catagories differently not as a whole.. and then look at data.. of avg. danceability, energy, and valence..!
+and then make a guess of the aura..
+
+if the user hears lot of songs that have high energy and valence.. the aura could be Yellow..so on and so forth
