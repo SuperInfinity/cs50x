@@ -1,0 +1,68 @@
+p {
+    font-size: large;
+    text-align: center;
+}
+
+table {
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+td {
+    border: 2px solid black;
+}
+
+.center {
+    text-align: center;
+}
+
+.team {
+    font-size: larger;
+    background-color: crimson;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.gern {
+    font-size: larger;
+    text-align: center;
+}
+
+.main {
+    font-size: xx-large;
+    color: rebeccapurple;
+    text-align: center;
+}
+
+#sub1 {
+    color: mediumseagreen;
+    font-size: large;
+}
+
+#sub2 {
+    color: blueviolet;
+    font-size: xx-large;
+}
+
+#add1 {
+    color: blue;
+    font-size: xx-large;
+}
+
+#add2 {
+    color: orange;
+    font-size: xx-large;
+}
+
+#score1 {
+    color: aqua;
+    font-size: xx-large;
+}
+
+#score2 {
+    color: darkred;
+    font-size: xx-large;
+}

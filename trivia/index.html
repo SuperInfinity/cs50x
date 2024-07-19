@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+        // TODO: Add code to check answers to questions
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('#button1').addEventListener('click', function() {
+                document.querySelector('#button1').style.backgroundColor = 'red';
+                displayText('incorrect');
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('#button2').addEventListener('click', function() {
+                document.querySelector('#button2').style.backgroundColor = 'red';
+                displayText('incorrect');
+            });
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('#button3').addEventListener('click', function() {
+                document.querySelector('#button3').style.backgroundColor = 'green';
+                displayText('correct');
+            });
+        });
+
+        function displayText(ans) {
+            if (ans == 'correct') {
+                document.querySelector('#p1').innerHTML = 'Correct';
+            }
+
+            else {
+                document.querySelector('#p1').innerHTML = 'Incorrect';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('form').addEventListener('submit', function(e) {
+                ans = document.querySelector('#ans').value;
+                if (ans == '8') {
+                    document.querySelector('#ans').style.backgroundColor = 'green';
+                    document.querySelector('#p2').innerHTML = 'Correct';
+                }
+
+                else {
+                    document.querySelector('#ans').style.backgroundColor = 'red';
+                    document.querySelector('#p2').innerHTML = 'Incorrect';
+                }
+
+                e.preventDefault();
+            })
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice </h2>
+            <hr>
+            <!-- TODO: Add multiple choice question here -->
+            <h3>Who is the author of the book "A Song Of Ice And Fire"..?</h3>
+
+            <p id="p1" class="answer"></p>
+
+            <button id="button1">David Benioff</button>
+            <button id="button2">D. B. Weiss</button>
+            <button id="button3">George R. R. Martin</button>
+
+            </div>
+
+                <div class="section">
+                    <h2>Part 2: Free Response</h2>
+                    <hr>
+                    <!-- TODO: Add free response question here -->
+
+                    <h3>How Many Seasons are there, in The "Game Of Thrones"..?</h3>
+
+                    <form>
+                        <p id="p2" class="answer"></p>
+                        <label for="ans">Enter Here</label>
+                        <input type="text" id="ans">
+                        <input type="submit" id="submit" value="Check" onsubmit="validateAns(this.innerHTML)">
+                    </form>
+
+                </div>
+        </div>
+</body>
+
+</html>
