@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    HomePage
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        <table class="table">
+            {% for user, value in data.items() %}
+
+                <thead>
+                    <th colspan="5"> <h3> {{user}} </h3> </th>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td colspan="5"> <h5> Purchases </h5> </td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td>stock_symbol</td>
+                        <td>bought_single_at_price</td>
+                        <td>quantity</td>
+                        <td>ttl_value</td>
+                        <td>date_time</td>
+                    </tr>
+                    <tr></tr>
+                    {% for p in value.purchases %}
+                        <tr>
+                            <td> {{p.stock_symbol}} </td>
+                            <td> {{p.bought_single_at_price | usd}} </td>
+                            <td> {{p.quantity}} </td>
+                            <td> {{p.ttl_value | usd}} </td>
+                            <td> {{p.date_time}} </td>
+                        </tr>
+                    {% endfor %}
+
+                    <tr>
+                        <td colspan="5"> <h5> Sells </h5> </td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td>stock_symbol</td>
+                        <td>Sold At</td>
+                        <td>quantity</td>
+                        <td>ttl_value</td>
+                        <td>date_time</td>
+                    </tr>
+                    <tr></tr>
+                    {% for p in value.sells %}
+                        <tr>
+                            <td> {{p.stock_symbol}} </td>
+                            <td> {{p.sold_at | usd}} </td>
+                            <td> {{p.quantity}} </td>
+                            <td> {{p.ttl_value | usd}} </td>
+                            <td> {{p.date_time}} </td>
+                        </tr>
+                    {% endfor %}
+
+                </tbody>
+
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    buy stock!
+{% endblock %}
+
+{% block main %}
+
+    <form action="/buy" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Enter Stock's Symbol" type="text" id="symbol">
+            <h10 id="price"></h10>
+        </div>
+
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="shares" placeholder="Number of Stock(s)" type="text" id="shares">
+            <h10 id="ttl"></h10>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Buy</button>
+    </form>
+
+
+    <script>
+
+        let input = document.getElementById('symbol');
+        input.addEventListener('input', async function() {
+            let response = await fetch('/see?q=' + input.value);
+            let data = await response.json();
+            let html = '';
+            if (data[0].price != undefined) {
+                html = 'Current-Price: $' + Math.round(data[0].price, 2);
+            }
+            document.querySelector('h10').innerHTML = html;
+        });
+
+    </script>
+
+{% endblock %}

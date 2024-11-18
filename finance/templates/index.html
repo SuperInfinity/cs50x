@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    HomePage
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Stock Symbol</th>
+                    <th>Current Price</th>
+                    <th>Amount you hold</th>
+                    <th>Totall Value</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for stock in data %}
+
+                    <tr>
+                        <td> {{stock.stock_symbol}} </td>
+                        <td> {{stock.curr_price | usd}} </td>
+                        <td> {{stock.quantity}} </td>
+                        <td> {{stock.ttl_value | usd}} </td>
+                    </tr>
+
+                {% endfor%}
+            </tbody>
+        </table>
+    </div>
+    <div class="mb-3">
+        <h8>Balance:  {{cash}}</h8>
+    </div>
+    <div class="mb-3">
+        <h8>Grand Totall: {{grand_ttl}}</h8>
+    </div>
+{% endblock %}

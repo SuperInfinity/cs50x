@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ data.name }}
+{% endblock %}
+
+{% block main %}
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>Name</td>
+                <td> {{data.name}} </td>
+            </tr>
+
+            <tr> </tr>
+
+            <tr>
+                <td>Price</td>
+                <td> ${{"%.2f"|format(data.price)}} </td>
+            </tr>
+
+            <tr> </tr>
+
+            <tr>
+                <td>Symbol</td>
+                <td> {{data.symbol}} </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+{% endblock %}
